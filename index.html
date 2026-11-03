@@ -1,0 +1,1172 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>今の家賃を無料でチェック｜区分マンションオーナー様へ</title>
+  <meta name="description" content="物価は上がっているのに、家賃は昔のまま？区分マンションの今の家賃が相場に合っているか、LINEで無料チェックできます。">
+  <meta property="og:title" content="今の家賃を無料でチェック｜区分マンションオーナー様へ">
+  <meta property="og:description" content="物価は上がっているのに、家賃は昔のまま？区分マンションの今の家賃が相場に合っているか、LINEで無料チェックできます。">
+  <meta property="og:image" content="https://akihide19841006m.github.io/rent-check/ogp.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://akihide19841006m.github.io/rent-check/">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&amp;family=Noto+Serif+JP:wght@700;900&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #14213d;
+      --navy-light: #223763;
+      --navy-soft: #eaf0f8;
+      --cream: #fffaf0;
+      --paper: #ffffff;
+      --ink: #263249;
+      --muted: #687286;
+      --gold: #c9a04a;
+      --gold-soft: #f4ead0;
+      --line-green: #06c755;
+      --line-green-dark: #049541;
+      --line: #e5e0d7;
+      --sim-navy: #1f2a44;
+      --sim-navy-soft: #eaf0f8;
+      --sim-positive: #197a4a;
+      --sim-positive-bg: #e8f5ed;
+      --sim-negative: #b53b48;
+      --sim-negative-bg: #faecee;
+      --shadow: 0 14px 38px rgba(20, 33, 61, .10);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: #f2eee6;
+      font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .page-shell {
+      width: min(100%, 720px);
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 0 0 1px rgba(20, 33, 61, .04), 0 18px 60px rgba(20, 33, 61, .08);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    .serif { font-family: "Noto Serif JP", "Yu Mincho", serif; }
+
+    .section { padding: 68px 30px; }
+
+    .section-kicker {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 12px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .13em;
+    }
+
+    .section-kicker::before {
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .section-title {
+      margin-bottom: 18px;
+      color: var(--navy);
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: clamp(25px, 6.8vw, 34px);
+      font-weight: 900;
+      line-height: 1.45;
+      letter-spacing: .015em;
+    }
+
+    .section-lead {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 610px;
+      padding: 70px 30px 57px;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 83% 15%, rgba(201, 160, 74, .28) 0 2px, transparent 2.5px),
+        radial-gradient(circle at 76% 20%, rgba(255, 255, 255, .28) 0 1px, transparent 1.5px),
+        linear-gradient(145deg, #0d1830 0%, #14213d 47%, #263f70 100%);
+    }
+
+    .hero::before {
+      position: absolute;
+      right: -110px;
+      bottom: -122px;
+      width: 340px;
+      height: 340px;
+      border: 1px solid rgba(255, 255, 255, .20);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero::after {
+      position: absolute;
+      right: -30px;
+      bottom: 0;
+      left: -18px;
+      height: 128px;
+      opacity: .45;
+      background:
+        linear-gradient(90deg, transparent 0 3%, rgba(255, 255, 255, .18) 3% 3.7%, transparent 3.7% 7%, rgba(255, 255, 255, .13) 7% 11%, transparent 11% 15%, rgba(255, 255, 255, .18) 15% 16%, transparent 16% 20%, rgba(255, 255, 255, .12) 20% 27%, transparent 27% 31%, rgba(255, 255, 255, .19) 31% 34%, transparent 34% 39%, rgba(255, 255, 255, .12) 39% 45%, transparent 45% 49%, rgba(255, 255, 255, .17) 49% 52%, transparent 52% 58%, rgba(255, 255, 255, .13) 58% 65%, transparent 65% 70%, rgba(255, 255, 255, .18) 70% 73%, transparent 73% 80%, rgba(255, 255, 255, .12) 80% 89%, transparent 89% 94%, rgba(255, 255, 255, .16) 94% 97%, transparent 97%),
+        linear-gradient(90deg, rgba(255, 255, 255, .22) 0 100%) bottom / 100% 1px no-repeat;
+      clip-path: polygon(0 100%, 0 40%, 4% 40%, 4% 14%, 8% 14%, 8% 66%, 13% 66%, 13% 25%, 18% 25%, 18% 100%, 23% 100%, 23% 49%, 29% 49%, 29% 20%, 35% 20%, 35% 100%, 42% 100%, 42% 35%, 50% 35%, 50% 60%, 55% 60%, 55% 18%, 63% 18%, 63% 100%, 69% 100%, 69% 42%, 76% 42%, 76% 8%, 83% 8%, 83% 100%, 89% 100%, 89% 30%, 96% 30%, 96% 53%, 100% 53%, 100% 100%);
+      content: "";
+    }
+
+    .hero-content { position: relative; z-index: 1; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 20px;
+      color: #d9e3f4;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: var(--gold);
+      content: "";
+    }
+
+    .hero h1 {
+      margin-bottom: 21px;
+      color: #fff;
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: clamp(25px, 7.2vw, 48px);
+      font-weight: 900;
+      line-height: 1.4;
+      letter-spacing: .01em;
+    }
+
+    .hero h1 em {
+      color: #f1cb72;
+      font-style: normal;
+      text-shadow: 0 2px 16px rgba(201, 160, 74, .25);
+    }
+
+    .hero-lead {
+      max-width: 31em;
+      margin-bottom: 31px;
+      color: #e4ebf7;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .line-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 60px;
+      padding: 13px 18px;
+      border: 0;
+      border-radius: 15px;
+      color: #fff;
+      background: var(--line-green);
+      box-shadow: 0 7px 0 var(--line-green-dark), 0 13px 22px rgba(0, 0, 0, .18);
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    }
+
+    .line-button:hover {
+      background: #05b94f;
+      box-shadow: 0 5px 0 var(--line-green-dark), 0 10px 18px rgba(0, 0, 0, .18);
+      transform: translateY(2px);
+    }
+
+    .line-button:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .line-button--large { min-height: 67px; font-size: 17px; }
+
+    .button-note {
+      margin: 16px 0 0;
+      color: #d9e3f4;
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .pain-section { background: var(--cream); }
+
+    .check-grid {
+      display: grid;
+      gap: 10px;
+      margin: 28px 0 25px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-card {
+      position: relative;
+      min-height: 66px;
+      padding: 16px 16px 16px 51px;
+      border: 1px solid #ebe2d2;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .82);
+      color: #465268;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.72;
+    }
+
+    .check-card::before {
+      position: absolute;
+      top: 18px;
+      left: 17px;
+      display: grid;
+      width: 23px;
+      height: 23px;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--gold);
+      content: "✓";
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .check-summary {
+      margin: 0;
+      color: var(--navy);
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .check-summary strong { color: #9a742c; font-weight: 800; }
+
+    .balance-section { background: #fff; }
+
+    .balance-copy {
+      margin: 0 0 29px;
+      color: #566176;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .feature-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .feature-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      min-height: 76px;
+      padding: 15px;
+      border: 1px solid #e6e8ed;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 18px rgba(20, 33, 61, .04);
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .feature-icon {
+      flex: 0 0 auto;
+      width: 30px;
+      height: 30px;
+      stroke: var(--gold);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+    }
+
+    .balance-section .button-note { color: #778195; }
+
+    .simulator-section {
+      background: #f7f9fc;
+    }
+
+    .simulator-section .section-title { margin-bottom: 12px; }
+    .simulator-section .section-lead { margin-bottom: 28px; }
+
+    /* rent-simulator.html のシミュレーター表示を移植 */
+    .simulator-card {
+      padding: 25px 20px 20px;
+      border: 1px solid #e1e7f0;
+      border-radius: 18px;
+      background: #fff;
+      box-shadow: 0 14px 38px rgba(31, 42, 68, .10);
+    }
+
+    .card-kicker {
+      margin-bottom: 5px;
+      color: #53617a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .card-title {
+      margin-bottom: 27px;
+      color: var(--sim-navy);
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .control + .control {
+      margin-top: 29px;
+      padding-top: 27px;
+      border-top: 1px solid #edf0f5;
+    }
+
+    .control-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 13px;
+    }
+
+    .control-label {
+      margin: 0;
+      color: #4e5c72;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .control-value {
+      flex: 0 0 auto;
+      margin: 0;
+      color: var(--sim-navy);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .range-wrap { position: relative; }
+
+    input[type="range"] {
+      --fill: 0%;
+      display: block;
+      width: 100%;
+      height: 30px;
+      margin: 0;
+      padding: 0;
+      appearance: none;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    input[type="range"]:focus-visible {
+      outline: 3px solid rgba(31, 42, 68, .25);
+      outline-offset: 4px;
+      border-radius: 16px;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--sim-navy) 0 var(--fill), #dbe2ec var(--fill) 100%);
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      width: 24px;
+      height: 24px;
+      margin-top: -8px;
+      appearance: none;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--sim-navy);
+      box-shadow: 0 2px 7px rgba(20, 32, 58, .28);
+    }
+
+    input[type="range"]::-moz-range-track {
+      height: 8px;
+      border-radius: 999px;
+      background: #dbe2ec;
+    }
+
+    input[type="range"]::-moz-range-progress {
+      height: 8px;
+      border-radius: 999px;
+      background: var(--sim-navy);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      background: var(--sim-navy);
+      box-shadow: 0 2px 7px rgba(20, 32, 58, .28);
+    }
+
+    .range-scale {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0;
+      color: #8993a3;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .results {
+      margin-top: 34px;
+      padding-top: 25px;
+      border-top: 1px solid #dfe5ed;
+    }
+
+    .results-heading {
+      margin-bottom: 15px;
+      color: #53617a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .07em;
+    }
+
+    .income-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #edf0f5;
+    }
+
+    .income-label { color: #59667a; font-size: 13px; }
+
+    .income-amount {
+      color: var(--sim-navy);
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      white-space: nowrap;
+    }
+
+    .difference-box {
+      margin-top: 19px;
+      padding: 17px 16px;
+      border-radius: 12px;
+      background: #f1f4f8;
+      text-align: center;
+    }
+
+    .difference-label {
+      display: block;
+      margin-bottom: 2px;
+      color: #59667a;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .difference-amount {
+      display: block;
+      color: var(--sim-navy);
+      font-size: 31px;
+      font-weight: 800;
+      letter-spacing: -.035em;
+      line-height: 1.3;
+    }
+
+    .difference-box.is-positive { background: var(--sim-positive-bg); }
+    .difference-box.is-positive .difference-amount { color: var(--sim-positive); }
+    .difference-box.is-negative { background: var(--sim-negative-bg); }
+    .difference-box.is-negative .difference-amount { color: var(--sim-negative); }
+
+    .result-comment {
+      margin: 12px 0 0;
+      color: #536174;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .break-even {
+      margin: 16px 0 0;
+      padding: 13px 14px;
+      border-radius: 9px;
+      color: var(--sim-navy);
+      background: var(--sim-navy-soft);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .notice {
+      margin: 20px 2px 0;
+      color: #7b8492;
+      font-size: 11px;
+      line-height: 1.75;
+    }
+
+    .message-band {
+      padding: 54px 30px;
+      background: #f7f0df;
+    }
+
+    .message-band p {
+      margin-bottom: 0;
+      color: var(--navy);
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.85;
+      letter-spacing: .015em;
+    }
+
+    .message-band p + p {
+      margin-top: 18px;
+      color: #59667a;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .factors-section { background: #fff; }
+
+    .factor-list {
+      display: grid;
+      gap: 13px;
+      margin: 31px 0 27px;
+      padding: 0;
+      list-style: none;
+      counter-reset: factors;
+    }
+
+    .factor-card {
+      position: relative;
+      min-height: 128px;
+      padding: 19px 16px 17px 67px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 9px 23px rgba(20, 33, 61, .045);
+      counter-increment: factors;
+    }
+
+    .factor-card::before {
+      position: absolute;
+      top: 18px;
+      left: 17px;
+      color: var(--gold);
+      content: counter(factors, decimal-leading-zero);
+      font-family: "Noto Serif JP", serif;
+      font-size: 21px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .factor-heading {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.5;
+    }
+
+    .impact-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      color: #8c6928;
+      background: var(--gold-soft);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+
+    .factor-card p {
+      margin: 0;
+      color: #667186;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .section-note {
+      margin: 0;
+      padding: 18px;
+      border-left: 3px solid var(--gold);
+      border-radius: 0 10px 10px 0;
+      color: #59667a;
+      background: #faf7f0;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.85;
+    }
+
+    .management-section { background: var(--cream); }
+
+    .management-intro {
+      margin: 0 0 29px;
+      color: #566176;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .numbered-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: steps;
+    }
+
+    .numbered-list li {
+      position: relative;
+      padding: 18px 15px 17px 62px;
+      border: 1px solid #ebe2d2;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .86);
+      counter-increment: steps;
+    }
+
+    .numbered-list li::before {
+      position: absolute;
+      top: 18px;
+      left: 16px;
+      color: var(--gold);
+      content: counter(steps, decimal-leading-zero);
+      font-family: "Noto Serif JP", serif;
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .numbered-list strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.6;
+    }
+
+    .numbered-list span {
+      display: block;
+      color: #667186;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.8;
+    }
+
+    .consultation-section { background: #fff; }
+
+    .consultation-list li { border-color: #e1e6ec; background: #f9fbfd; }
+
+    .final-cta {
+      padding: 68px 30px 64px;
+      color: #fff;
+      background: linear-gradient(150deg, #0d1830, #14213d 56%, #263f70);
+    }
+
+    .final-cta .section-kicker { color: #f1cb72; }
+
+    .final-cta h2 {
+      margin-bottom: 20px;
+      color: #fff;
+      font-family: "Noto Serif JP", "Yu Mincho", serif;
+      font-size: clamp(30px, 8vw, 43px);
+      font-weight: 900;
+      line-height: 1.43;
+      letter-spacing: .015em;
+    }
+
+    .final-cta h2 span { color: #f1cb72; }
+
+    .final-cta > p:not(.section-kicker):not(.button-note) {
+      margin-bottom: 28px;
+      color: #e2eafa;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.95;
+    }
+
+    .step-heading {
+      margin: 0 0 13px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .08em;
+    }
+
+    .cta-steps {
+      display: grid;
+      gap: 10px;
+      margin: 0 0 30px;
+      padding: 0;
+      list-style: none;
+      counter-reset: cta-steps;
+    }
+
+    .cta-steps li {
+      position: relative;
+      min-height: 48px;
+      padding: 12px 12px 12px 46px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      border-radius: 10px;
+      color: #edf3ff;
+      background: rgba(255, 255, 255, .08);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.7;
+      counter-increment: cta-steps;
+    }
+
+    .cta-steps li::before {
+      position: absolute;
+      top: 12px;
+      left: 14px;
+      color: #f1cb72;
+      content: counter(cta-steps, decimal-leading-zero);
+      font-family: "Noto Serif JP", serif;
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 30px;
+      color: #6b7585;
+      background: #eef1f5;
+      font-size: 11px;
+      line-height: 1.9;
+    }
+
+    footer p { margin-bottom: 3px; }
+    footer p:last-child { margin-bottom: 0; }
+
+    .mobile-line-cta {
+      position: fixed;
+      z-index: 20;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      display: none;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 13px;
+      color: #fff;
+      background: var(--line-green);
+      box-shadow: 0 6px 0 var(--line-green-dark), 0 11px 25px rgba(0, 0, 0, .25);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.4;
+      text-align: center;
+      text-decoration: none;
+      transform: translateY(95px);
+      transition: transform .25s ease;
+    }
+
+    .mobile-line-cta.is-visible { transform: translateY(0); }
+
+    @media (min-width: 721px) {
+      body { padding: 28px 0; }
+    }
+
+    @media (max-width: 640px) {
+      body { background: #fff; }
+      .page-shell { box-shadow: none; }
+      .mobile-line-cta { display: flex; }
+    }
+
+    @media (max-width: 410px) {
+      .section { padding: 58px 20px; }
+      .hero { min-height: 576px; padding: 59px 20px 48px; }
+      .hero h1 { font-size: 7.2vw; }
+      .message-band, .final-cta { padding-right: 20px; padding-left: 20px; }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .65s ease, transform .65s ease;
+      }
+
+      .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero" id="hero">
+      <div class="hero-content">
+        <p class="eyebrow">区分マンションオーナー様へ</p>
+        <h1>物価は上がっているのに、<br>家賃は<em>昔のまま</em>に<br>なっていませんか？</h1>
+        <p class="hero-lead">修繕費も管理費も、ここ数年で上がりました。あなたのお部屋の家賃は、今の相場に合っていますか？</p>
+        <a class="line-button" data-line-link aria-label="LINEで今の家賃を無料でチェックする">今の家賃を無料でチェックする</a>
+        <p class="button-note">LINEで部屋の情報を送るだけ</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="section pain-section reveal" aria-labelledby="concern-title">
+        <p class="section-kicker">RENT CHECK</p>
+        <h2 class="section-title" id="concern-title">こんなこと、<br>気になっていませんか？</h2>
+        <ul class="check-grid">
+          <li class="check-card">周りの家賃は上がっているのに、うちの部屋はずっと同じ金額</li>
+          <li class="check-card">管理会社から家賃見直しの話が出たことがない</li>
+          <li class="check-card">家賃を上げたいけれど、退去されるのが怖い</li>
+          <li class="check-card">いくらまでなら上げても大丈夫か、見当がつかない</li>
+          <li class="check-card">近くの似た部屋がいくらで貸されているか知らない</li>
+          <li class="check-card">管理会社に、どう切り出せばいいかわからない</li>
+        </ul>
+        <p class="check-summary">ひとつでも当てはまったら、<strong>今の家賃を確かめるタイミング</strong>かもしれません。</p>
+      </section>
+
+      <section class="section balance-section reveal" aria-labelledby="balance-title">
+        <p class="section-kicker">THE RIGHT BALANCE</p>
+        <h2 class="section-title" id="balance-title">ただし、家賃は高くすればいいわけではありません。</h2>
+        <p class="balance-copy">大切なのは、周りの相場とお部屋の条件を比べたうえで、空室のリスクも含めた“ちょうどいい家賃”を知ることです。</p>
+        <div class="feature-grid" aria-label="適正な家賃を考える3つの視点">
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="14" cy="14" r="8"></circle><path d="m20 20 7 7M10 14h8M14 10v8"></path></svg>
+            <span>周辺の相場と比べる</span>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 4 27 9v7c0 6.6-4.7 10.5-11 12-6.3-1.5-11-5.4-11-12V9l11-5Z"></path><path d="m11 16 3 3 7-7"></path></svg>
+            <span>空室のリスクも考える</span>
+          </div>
+          <div class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M7 5h18v17H14l-6 5v-5H7Z"></path><path d="M11 11h10M11 16h7"></path></svg>
+            <span>管理会社への伝え方を整える</span>
+          </div>
+        </div>
+        <a class="line-button" data-line-link aria-label="LINEで今の家賃が適正か無料で確認する">今の家賃が適正か、無料で確認する</a>
+        <p class="button-note">LINEで部屋の情報を送るだけ</p>
+      </section>
+
+      <section class="section simulator-section reveal" aria-labelledby="simulator-title">
+        <p class="section-kicker">SIMULATOR</p>
+        <h2 class="section-title" id="simulator-title">家賃見直しシミュレーター</h2>
+        <p class="section-lead">値上げ額と空室期間を変えて、年間収入への影響を確認できます。</p>
+
+        <div class="simulator-card">
+          <p class="card-kicker">ANNUAL RENT ESTIMATE</p>
+          <h3 class="card-title">値上げと空室期間を動かしてみる</h3>
+
+          <div class="control">
+            <div class="control-top">
+              <label class="control-label" for="current-rent">現在の月額家賃</label>
+              <output class="control-value" id="current-rent-value" for="current-rent">100,000円</output>
+            </div>
+            <div class="range-wrap">
+              <input id="current-rent" type="range" min="50000" max="300000" step="1000" value="100000" aria-describedby="current-rent-scale">
+            </div>
+            <div class="range-scale" id="current-rent-scale" aria-hidden="true"><span>50,000円</span><span>300,000円</span></div>
+          </div>
+
+          <div class="control">
+            <div class="control-top">
+              <label class="control-label" for="rent-increase">月額の値上げ額</label>
+              <output class="control-value" id="rent-increase-value" for="rent-increase">5,000円</output>
+            </div>
+            <div class="range-wrap">
+              <input id="rent-increase" type="range" min="0" max="30000" step="1000" value="5000" aria-describedby="rent-increase-scale">
+            </div>
+            <div class="range-scale" id="rent-increase-scale" aria-hidden="true"><span>0円</span><span>30,000円</span></div>
+          </div>
+
+          <div class="control">
+            <div class="control-top">
+              <label class="control-label" for="vacancy-months">値上げ後の空室期間</label>
+              <output class="control-value" id="vacancy-months-value" for="vacancy-months">1か月</output>
+            </div>
+            <div class="range-wrap">
+              <input id="vacancy-months" type="range" min="0" max="6" step="1" value="1" aria-describedby="vacancy-months-scale">
+            </div>
+            <div class="range-scale" id="vacancy-months-scale" aria-hidden="true"><span>0か月</span><span>6か月</span></div>
+          </div>
+
+          <div class="results" aria-live="polite" aria-atomic="true">
+            <p class="results-heading">年間家賃収入の比較</p>
+            <div class="income-row">
+              <span class="income-label">現在の年間家賃収入</span>
+              <output class="income-amount" id="current-annual">1,200,000円</output>
+            </div>
+            <div class="income-row">
+              <span class="income-label">値上げ後の年間家賃収入</span>
+              <output class="income-amount" id="revised-annual">1,155,000円</output>
+            </div>
+            <div class="difference-box is-negative" id="difference-box">
+              <span class="difference-label">年間の差額</span>
+              <output class="difference-amount" id="difference">−45,000円</output>
+            </div>
+            <p class="result-comment" id="result-comment">空室期間を含めると、年間家賃収入が下回る試算です。</p>
+            <p class="break-even" id="break-even">この値上げ額なら、空室は約0.5か月以内であれば年間収入は上回ります。</p>
+          </div>
+
+          <p class="notice">※現在は12か月入居、値上げ後に設定した空室期間が生じると仮定しています。実際の賃料、周辺相場、募集条件、広告料、原状回復費用、管理会社の判断などは考慮していません。</p>
+        </div>
+      </section>
+
+      <section class="message-band reveal" aria-label="家賃見直しの考え方">
+        <p>家賃を上げることが、必ずしも収益アップにつながるとは限りません。</p>
+        <p>値上げ額だけでなく、空室期間や募集にかかる費用まで含めて考えることが重要です。</p>
+      </section>
+
+      <section class="section factors-section reveal" aria-labelledby="factors-title">
+        <p class="section-kicker">RENT FACTORS</p>
+        <h2 class="section-title" id="factors-title">家賃を左右する<br>5つのポイント</h2>
+        <ol class="factor-list">
+          <li class="factor-card">
+            <h3 class="factor-heading">築年数 <span class="impact-tag">影響：大</span></h3>
+            <p>新しいほど高く、年数がたつほど下がりやすい。築年数の近い部屋と比べるのが基本です。</p>
+          </li>
+          <li class="factor-card">
+            <h3 class="factor-heading">専有面積 <span class="impact-tag">影響：大</span></h3>
+            <p>同じエリアでも、広さで家賃は大きく変わります。1㎡あたりの単価で比べると差がわかりやすくなります。</p>
+          </li>
+          <li class="factor-card">
+            <h3 class="factor-heading">間取り・階数 <span class="impact-tag">影響：中</span></h3>
+            <p>同じ広さでも、間取りの使いやすさや階数、日当たりで評価が変わります。</p>
+          </li>
+          <li class="factor-card">
+            <h3 class="factor-heading">設備 <span class="impact-tag">影響：中</span></h3>
+            <p>オートロック、宅配ボックス、独立洗面台、インターネット無料などは、選ばれやすさに直結します。</p>
+          </li>
+          <li class="factor-card">
+            <h3 class="factor-heading">立地 <span class="impact-tag">影響：大〜中</span></h3>
+            <p>駅からの距離や路線、周りの環境。同じ駅でも徒歩分数で差が出ます。</p>
+          </li>
+        </ol>
+        <p class="section-note">この5つを、近くの“似た部屋”と照らし合わせることで、お部屋に合った家賃の目安が見えてきます。</p>
+      </section>
+
+      <section class="section management-section reveal" aria-labelledby="management-title">
+        <p class="section-kicker">BEFORE YOU ASK</p>
+        <h2 class="section-title" id="management-title">管理会社に「家賃を上げてほしい」と伝える前に</h2>
+        <p class="management-intro">いきなり値上げを頼むより、まずは今の相場を一緒に確認するところから始めるのがおすすめです。</p>
+        <h3 class="card-title">確認しておきたい3つのポイント</h3>
+        <ol class="numbered-list">
+          <li><strong>周辺の募集家賃</strong><span>同じエリア・同じくらいの築年数と広さの部屋が、いくらで募集されているか。</span></li>
+          <li><strong>値上げによる空室リスク</strong><span>上げた家賃で、次の入居者が決まりにくくならないか。</span></li>
+          <li><strong>今の入居者への伝え方</strong><span>更新のタイミングや伝え方を、管理会社と相談しておく。</span></li>
+        </ol>
+      </section>
+
+      <section class="section consultation-section reveal" aria-labelledby="consultation-title">
+        <p class="section-kicker">FREE CONSULTATION</p>
+        <h2 class="section-title" id="consultation-title">無料相談で確認できること</h2>
+        <ol class="numbered-list consultation-list">
+          <li><strong>お部屋の周りの家賃相場</strong></li>
+          <li><strong>似た部屋と比べた、あなたのお部屋の強み・弱み</strong></li>
+          <li><strong>家賃を見直せる余地があるか</strong></li>
+          <li><strong>値上げした場合の空室リスクとのバランス</strong></li>
+          <li><strong>持ち続けるか、売るかも含めたこれからの考え方</strong></li>
+        </ol>
+      </section>
+
+      <section class="final-cta reveal" id="final-cta" aria-labelledby="final-cta-title">
+        <p class="section-kicker">区分マンションオーナー様へ</p>
+        <h2 id="final-cta-title">今の家賃を<br><span>無料</span>でチェックする</h2>
+        <p>家賃を上げるかどうかは、確認したあとに考えれば大丈夫です。</p>
+        <h3 class="step-heading">かんたん3ステップ</h3>
+        <ol class="cta-steps">
+          <li>LINEで友だち追加</li>
+          <li>部屋の情報を送るだけ</li>
+          <li>相場と見直し案が届く</li>
+        </ol>
+        <a class="line-button line-button--large" data-line-link aria-label="LINEで無料チェックする">LINEで無料チェックする</a>
+        <p class="button-note">相談だけでもOK。しつこい営業はしません。</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 今の家賃を無料でチェック</p>
+    </footer>
+  </div>
+
+  <a class="mobile-line-cta" data-line-link aria-label="LINEで今の家賃を無料でチェックする">今の家賃を無料でチェック</a>
+
+  <script>
+    const CONFIG = { lineUrl: "https://lin.ee/VPu5rlr" }; // ←LINE公式アカウントの友だち追加／トークURLに差し替え
+
+    const controls = {
+      currentRent: document.querySelector("#current-rent"),
+      rentIncrease: document.querySelector("#rent-increase"),
+      vacancyMonths: document.querySelector("#vacancy-months")
+    };
+
+    const outputs = {
+      currentRent: document.querySelector("#current-rent-value"),
+      rentIncrease: document.querySelector("#rent-increase-value"),
+      vacancyMonths: document.querySelector("#vacancy-months-value"),
+      currentAnnual: document.querySelector("#current-annual"),
+      revisedAnnual: document.querySelector("#revised-annual"),
+      difference: document.querySelector("#difference"),
+      differenceBox: document.querySelector("#difference-box"),
+      comment: document.querySelector("#result-comment"),
+      breakEven: document.querySelector("#break-even")
+    };
+
+    const formatYen = (amount) => `${Math.round(amount).toLocaleString("ja-JP")}円`;
+
+    function updateRangeFill(input) {
+      const min = Number(input.min);
+      const max = Number(input.max);
+      const value = Number(input.value);
+      const percentage = ((value - min) / (max - min)) * 100;
+      input.style.setProperty("--fill", `${percentage}%`);
+    }
+
+    function updateSimulator() {
+      const currentRent = Number(controls.currentRent.value);
+      const rentIncrease = Number(controls.rentIncrease.value);
+      const vacancyMonths = Number(controls.vacancyMonths.value);
+      const currentAnnual = currentRent * 12;
+      const revisedAnnual = (currentRent + rentIncrease) * (12 - vacancyMonths);
+      const difference = revisedAnnual - currentAnnual;
+
+      outputs.currentRent.textContent = formatYen(currentRent);
+      outputs.rentIncrease.textContent = formatYen(rentIncrease);
+      outputs.vacancyMonths.textContent = `${vacancyMonths}か月`;
+      outputs.currentAnnual.textContent = formatYen(currentAnnual);
+      outputs.revisedAnnual.textContent = formatYen(revisedAnnual);
+
+      outputs.differenceBox.classList.remove("is-positive", "is-negative");
+      if (difference > 0) {
+        outputs.difference.textContent = `＋${formatYen(difference)}`;
+        outputs.differenceBox.classList.add("is-positive");
+        outputs.comment.textContent = "空室期間を含めても、年間家賃収入が増える試算です。";
+      } else if (difference < 0) {
+        outputs.difference.textContent = `−${formatYen(Math.abs(difference))}`;
+        outputs.differenceBox.classList.add("is-negative");
+        outputs.comment.textContent = "空室期間を含めると、年間家賃収入が下回る試算です。";
+      } else {
+        outputs.difference.textContent = "0円";
+        outputs.comment.textContent = "年間家賃収入は変わらない試算です。";
+      }
+
+      if (rentIncrease === 0) {
+        outputs.breakEven.textContent = "値上げ額を入れると、許容できる空室期間の目安を確認できます。";
+      } else {
+        const breakEvenMonths = 12 - (currentAnnual / (currentRent + rentIncrease));
+        const flooredMonths = Math.max(0, Math.floor(breakEvenMonths * 10) / 10);
+        outputs.breakEven.textContent = `この値上げ額なら、空室は約${flooredMonths.toFixed(1)}か月以内であれば年間収入は上回ります。`;
+      }
+
+      Object.values(controls).forEach(updateRangeFill);
+    }
+
+    document.querySelectorAll("[data-line-link]").forEach((link) => {
+      link.href = CONFIG.lineUrl;
+    });
+
+    Object.values(controls).forEach((control) => {
+      control.addEventListener("input", updateSimulator);
+    });
+
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealItems = document.querySelectorAll(".reveal");
+    if (!prefersReducedMotion && "IntersectionObserver" in window) {
+      document.documentElement.classList.add("js");
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      revealItems.forEach((item) => revealObserver.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
+    const mobileCta = document.querySelector(".mobile-line-cta");
+    const hero = document.querySelector("#hero");
+    const finalCta = document.querySelector("#final-cta");
+    let heroHasLeft = false;
+    let finalCtaIsVisible = false;
+
+    function updateMobileCta() {
+      mobileCta.classList.toggle("is-visible", heroHasLeft && !finalCtaIsVisible);
+    }
+
+    if ("IntersectionObserver" in window) {
+      const heroObserver = new IntersectionObserver(([entry]) => {
+        heroHasLeft = !entry.isIntersecting;
+        updateMobileCta();
+      }, { threshold: 0.08 });
+
+      const finalCtaObserver = new IntersectionObserver(([entry]) => {
+        finalCtaIsVisible = entry.isIntersecting;
+        updateMobileCta();
+      }, { threshold: 0.12 });
+
+      heroObserver.observe(hero);
+      finalCtaObserver.observe(finalCta);
+    }
+
+    updateSimulator();
+  </script>
+</body>
+</html>
