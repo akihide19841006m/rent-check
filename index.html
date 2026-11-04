@@ -81,6 +81,12 @@
     .worry-section p .gold,.watermark:not(.navy) p .gold{background:linear-gradient(transparent 60%,#f3e3b5 60%)!important}
     @media (max-width:420px){.line-banner-note::before,.line-banner-note::after{display:none}.line-banner-note{white-space:nowrap;font-size:10.5px}}
 
+    /* Rent balance and seesaw explanation */
+    .soft-mark{padding:2px 6px;background:linear-gradient(transparent 0,#f3e3b5 0);color:var(--navy);font-weight:800}
+    .balance-section .lead-copy{margin-bottom:25px}.balance-divider{width:60%;height:1px;margin:0 auto 27px;background:#c9a24a}.balance-section .pillars{gap:0;margin:0 0 28px}.balance-section .pillar{position:relative;min-width:0;padding:0 5px;border:0;border-radius:0;background:transparent;box-shadow:none;color:var(--navy);font-size:12px;font-weight:800;line-height:1.65}.balance-section .pillar:not(:first-child)::before{position:absolute;top:3px;bottom:3px;left:0;width:1px;content:"";background:#c9a24a}.balance-section .picon{display:grid;width:56px;height:56px;margin:0 auto 9px;place-items:center;border:1px solid #c9a24a;border-radius:50%;background:var(--navy);color:#d9b45a;box-shadow:none}.balance-section .picon svg{width:27px;height:27px;stroke-width:1.55}
+    .seesaw-section.section.ivory-frame{padding:84px 23px 78px}.seesaw-overline{width:48px;height:2px;margin:0 0 17px;background:#c9a24a}.seesaw-title{margin:0;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:clamp(22px,6.3vw,26px);font-weight:900;line-height:1.58;letter-spacing:-.03em;word-break:keep-all;overflow-wrap:normal}.seesaw-title .gold{color:#a3792a}.seesaw-rule{width:60%;height:1px;margin:21px 0 23px;background:#c9a24a}.seesaw-copy{margin:0;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:17px;font-weight:700;line-height:2}.seesaw-figure{position:relative;margin:28px 0 23px;overflow:hidden;border-radius:10px;background:#ede4d2}.seesaw-figure img{width:100%;height:auto}.seesaw-callout{position:absolute;z-index:1;pointer-events:none}.seesaw-income{top:8%;left:20%}.seesaw-vacancy{top:6%;right:8%}.seesaw-label{position:relative;min-width:106px;padding:5px 8px 6px;border-radius:6px;color:#fff;font-family:"Noto Serif JP",serif;line-height:1.2;text-align:center;white-space:nowrap;box-shadow:0 3px 8px rgba(15,31,61,.16)}.seesaw-label::after{position:absolute;bottom:-6px;left:50%;width:0;height:0;content:"";transform:translateX(-50%);border-top:6px solid currentColor;border-right:5px solid transparent;border-left:5px solid transparent;color:#c9a24a}.seesaw-income .seesaw-label{background:linear-gradient(135deg,#a3792a,#c9a24a)}.seesaw-vacancy .seesaw-label{background:#0f1f3d}.seesaw-vacancy .seesaw-label::after{color:#0f1f3d}.seesaw-label span{display:block;font-family:"Noto Sans JP",sans-serif;font-size:10px;font-weight:700}.seesaw-label strong{display:block;margin-top:1px;font-size:16px;font-weight:900;letter-spacing:.01em}.seesaw-up-arrow{display:block;width:68px;height:53px;margin:8px 0 0 18px;overflow:visible}.seesaw-empty-arrow{display:block;width:73px;height:76px;margin:8px auto 0;overflow:visible}.seesaw-note{margin:0;color:var(--navy);font-family:"Noto Serif JP",serif;font-size:15px;font-weight:700;line-height:1.9}
+    @media(max-width:360px){.seesaw-section.section.ivory-frame{padding-right:20px;padding-left:20px}.seesaw-title{font-size:22px}.seesaw-income{left:15%}.seesaw-vacancy{right:3%}.seesaw-label{min-width:98px;padding-right:6px;padding-left:6px}.seesaw-label strong{font-size:15px}.seesaw-up-arrow{width:60px;margin-left:13px}.seesaw-empty-arrow{width:66px}.balance-section .pillar{font-size:11px}.balance-section .picon{width:52px;height:52px}}
+
     /* Hero and closing conversion sections */
     .hero{min-height:95svh;background:#fbf8f1;color:var(--navy)}
     .hero::after{background:linear-gradient(105deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.85) 45%,rgba(255,255,255,0) 75%)}
@@ -164,6 +170,7 @@
     .final-lead,.final-advisor,.final-note{text-shadow:0 0 6px #fff,0 0 12px #fff,0 0 2px #fff!important}
     .final-advisor,.final-note{color:var(--navy)!important}
       .lbt-text{display:block;flex:0 1 auto;text-align:center;white-space:nowrap;font-size:min(17px,4.6vw)}
+      .lead-copy .soft-mark{white-space:nowrap}
   </style>
 </head>
 <body>
@@ -193,19 +200,29 @@
       </ul>
       <p class="worry-end">ひとつでも当てはまったら、<br><strong>今の家賃を確かめるタイミング</strong>かもしれません。</p>
     </section>
-    <section class="section ivory-frame frame-b reveal watermark watermark-fukuoka" aria-labelledby="balance-title">
+    <section class="section ivory-frame frame-b reveal watermark watermark-fukuoka balance-section" aria-labelledby="balance-title">
       <i class="frame-decor" aria-hidden="true"></i><h2 class="title" id="balance-title">ただし、<br>家賃は<span class="gold">高くすれば</span><br>いいわけではありません。</h2>
-      <p class="copy lead-copy">大切なのは、周りの相場と物件の条件を比べたうえで、<span class="risk">空室のリスク</span>も含めた“<span class="gold">ちょうどいい家賃</span>”を知ることです。</p>
+      <p class="copy lead-copy">大切なのは、周りの相場と物件の条件を比べたうえで、<span class="risk">空室のリスク</span>も含めた<mark class="soft-mark">「適正な家賃」</mark>を知ることです。</p>
+      <div class="balance-divider" aria-hidden="true"></div>
       <div class="pillars" aria-label="確認したい3つの視点">
-        <div class="pillar"><span class="picon"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 27V11l11-6 11 6v16M11 27v-8h10v8M10 13h3m6 0h3"/></svg></span>周辺の相場と<br>比べる</div>
-        <div class="pillar"><span class="picon"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M16 27a11 11 0 1 0-11-11M16 10v7l5 3"/></svg></span><span class="risk">空室のリスク</span>も<br>考える</div>
-        <div class="pillar"><span class="picon"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 6h22v16H14l-6 5v-5H5zM10 12h12M10 17h7"/></svg></span>管理会社への<br>伝え方を整える</div>
+        <div class="pillar"><span class="picon"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 27h22M8 24V15h5v9m3 0V8h5v16m3 0V12h5v12"/></svg></span>周辺の相場と<br>今の家賃を比べる</div>
+        <div class="pillar"><span class="picon"><svg aria-hidden="true" viewBox="0 0 32 32"><rect x="6" y="4" width="20" height="24" rx="2"/><path d="M10 9h12M10 15h2m4 0h2m4 0h1M10 20h2m4 0h2m4 0h1M10 24h2m4 0h2m4 0h1"/></svg></span>値上げの余地と<br>空室リスクを確認</div>
+        <div class="pillar"><span class="picon"><svg aria-hidden="true" viewBox="0 0 32 32"><path d="M5 6h22v15H15l-6 5v-5H5zM10 12h12M10 16h8"/></svg></span>管理会社への<br>相談前にも役立つ</div>
       </div>
       <div class="line-banner"><p class="line-banner-title"><span class="lbt-text">あなたの物件の家賃は、<br><span class="gold">周辺の家賃相場</span>と合っていますか？</span></p><a class="gold-btn" data-line-link href="https://lin.ee/VPu5rlr" aria-label="現在の家賃を無料でチェックする"><span class="cta-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 14 16 5l12 9v13H4zM12 27v-8h8v8M22 7v4"/><circle cx="23" cy="18" r="4"/><path d="m26 21 3 3"/></svg></span><span class="cta-copy"><small>＼ カンタン入力・最短1分 ／</small><strong>現在の家賃を<span class="big">無料</span>でチェックする</strong></span><span class="cta-arrow" aria-hidden="true">›</span></a></div>
     </section>
-    <section class="photo-band reveal" aria-labelledby="tokyo-title">
-      <img class="wide" src="img/tokyo.jpg" alt="青空の下に見える東京タワーと東京の街並み" width="1088" height="608" loading="lazy">
-      <div class="photo-copy"><p class="eyebrow">家賃の上昇と、<span class="risk">空室のリスク</span></p><h2 class="title" id="tokyo-title">上げた分、<br><span class="risk">空室が長引けば</span><br><span class="risk">かえって損</span>になることも。</h2><p class="copy">家賃を上げると、次の入居者が決まるまでの期間が延びることがあります。値上げ額と空室期間のバランスを、下のシミュレーターで確かめてみましょう。</p></div>
+    <section class="section ivory-frame frame-a reveal seesaw-section" aria-labelledby="tokyo-title">
+      <i class="frame-decor" aria-hidden="true"></i>
+      <div class="seesaw-overline" aria-hidden="true"></div>
+      <h2 class="seesaw-title" id="tokyo-title">たとえば、<br><span class="gold">相場が上がっている</span>からと<br>家賃を一気に上げたら、<br>どうなるでしょう？</h2>
+      <div class="seesaw-rule" aria-hidden="true"></div>
+      <p class="seesaw-copy">希望の家賃で入居者が決まれば<br><mark class="soft-mark">収入は増えます。</mark><br>でも、次の入居者が決まるまでは、<br><mark class="soft-mark">その間の家賃収入はゼロです。</mark></p>
+      <figure class="seesaw-figure">
+        <img src="img/seesaw.jpg" alt="コインと重りを載せたシーソーの模型" width="1088" height="608" loading="lazy">
+        <div class="seesaw-callout seesaw-income"><div class="seesaw-label"><span>入居者が決まれば</span><strong>収入アップ</strong></div><svg class="seesaw-up-arrow" aria-hidden="true" viewBox="0 0 80 64"><path d="M10 55 59 15" fill="none" stroke="#a3792a" stroke-width="3" stroke-linecap="round"/><path d="m45 15 14 0-1 14" fill="none" stroke="#a3792a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="seesaw-callout seesaw-vacancy"><div class="seesaw-label"><span>空室が続けば</span><strong>収入ゼロ</strong></div><svg class="seesaw-empty-arrow" aria-hidden="true" viewBox="0 0 80 84"><path d="M40 4v38" fill="none" stroke="#8f9299" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="3 5"/><path d="m33 35 7 8 7-8" fill="none" stroke="#8f9299" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="40" cy="63" r="13" fill="none" stroke="#8f9299" stroke-width="2.2" stroke-dasharray="3 4"/></svg></div>
+      </figure>
+      <p class="seesaw-note">値上げ額と空室期間のバランスを、<br>下のシミュレーターで確かめてみましょう。</p>
     </section>
     <section class="sim-sec ivory-frame frame-a reveal watermark watermark-tokyo" aria-labelledby="simulator-title">
       <i class="frame-decor" aria-hidden="true"></i><p class="eyebrow">SIMULATOR</p><h2 class="title" id="simulator-title">家賃見直し<br>シミュレーター</h2><p class="copy">値上げ額と空室期間を変えて、年間収入への影響を確認できます。</p>
